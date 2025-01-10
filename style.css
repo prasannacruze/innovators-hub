@@ -5,7 +5,11 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
+  background: url('beg.jpg') no-repeat center center/cover ; /* Add the background image */
+  background-attachment:fixed; /* Optional: Makes the background stay fixed during scrolling */
 }
+
+
 
 header {
   display: flex;
@@ -62,14 +66,16 @@ nav ul li a:hover {
   text-align: center;
   padding: 100px 20px;
   background: url('C:\Users\HP\Desktop\n.jpg') no-repeat center center/cover; /* Replace with your hero image path */
-  background-color: rgba(0, 0, 0, 0.5); /* Darken the background image slightly */
+  
+ /* background-color: rgba(0, 0, 0, 0.5); /* Darken the background image slightly */
 }
 
 .hero h1 {
   font-size: 3em;
   margin: 20px 0;
   font-family: 'Audiowide', serif;
-  color: #fff; /* Ensure text is visible on the hero image */
+  /* color: hsl(251, 92%, 20%); Ensure text is visible on the hero image */
+  color:aliceblue;
 }
 
 .hero p {
@@ -80,7 +86,7 @@ nav ul li a:hover {
 
 .flash-symbol {
   animation: flash 1.5s infinite;
-  color: #f4d03f;
+ /* color: #f4d03f;*/
   font-size: 2rem;
 }
 
@@ -95,7 +101,7 @@ nav ul li a:hover {
 
 .content {
   padding: 40px 20px;
-  background: #13182d;
+ /* background: #13182d;*/
   margin: 20px auto;
   border-radius: 10px;
   width: 80%;
@@ -215,7 +221,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0f3460;
+  /*background-color: #0f3460;*/
+  background-color:black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -286,7 +293,7 @@ p {
 
 .content h2 {
   font-family: 'Audiowide', serif;
-  color: #e94560;
+  color:aliceblue;
 }
 
 @media (max-width: 768px) {
@@ -323,7 +330,7 @@ p {
 .header-section {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to right, #1a1a2e, #3e046d);
+ /* background: linear-gradient(to right, #1a1a2e, #3e046d);*/
   color: #fff;
   margin-bottom: 20px;
 }
@@ -449,7 +456,7 @@ p {
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.2; /* Adjust transparency of the background image */
+  opacity: 0.0; /* Adjust transparency of the background image */
   z-index: 1;
 }
 
@@ -484,7 +491,7 @@ p {
 .card ul li {
   margin: 10px 0;
   font-size: 15px;
-  color: #000;
+  color:aliceblue;
 }
 
 .card:hover ul {
@@ -493,7 +500,7 @@ p {
 
 .card p {
   font-size: 16px;
-  color: #333;
+  color:aliceblue;
   margin-bottom: 15px;
 }
 
