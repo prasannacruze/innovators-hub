@@ -199,7 +199,7 @@ nav ul li a:hover {
 
 body {
   font-family: 'Caudex', serif;
-  overflow: auto;
+  overflow: hidden;
   background-color: #1a1a2e;
   color: #ffffff;
 }
@@ -223,14 +223,14 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  /*background-color: #0f3460;*/
-  background-color:black;
+  background-color: black; /* Adjust as needed */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; /* Ensure it stays on top */
 }
+
 
 .preloader img {
   width: 120px;
@@ -243,74 +243,162 @@ p {
   color: #e94560;
 }
 
-.loader {
+
+body,html {
+  background-body,html {
+  background-color: #1c2020;
+  height: 100%;
   position: relative;
-  width: 100px;
-  height: 100px;
+  overflow: hidden;
 }
 
-.loader .circle {
+.loader {
+  margin: 0 auto;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  
+  > div {
+    height: 100%;
+    width: 8px;
+    display: inline-block;
+    float: left;
+    margin-left: 2px;
+    -webkit-animation: delay 0.8s infinite ease-in-out;
+    animation: delay 0.8s infinite ease-in-out;
+  }
+  
+  .bar1{
+    background-color: #754fa0 ;
+  }
+  .bar2{
+    background-color: #09b7bf;
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+  }
+  .bar3{
+    background-color: #90d36b;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
+  .bar4{
+    background-color: #f2d40d;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+  .bar5{
+    background-color: #fcb12b;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+  }
+  .bar6{
+    background-color: #ed1b72;
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+  }
+}
+
+
+@-webkit-keyframes delay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.05) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes delay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}color: #1c2020;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader {
+  margin: 0 auto;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  animation: spin 1.5s linear infinite;
-}
-
-.loader .circle.one {
-  border-top-color: #3498db;
-  animation-delay: -0.4s;
-}
-
-.loader .circle.two {
-  border-top-color: #e74c3c;
-  animation-delay: -0.2s;
-}
-
-.loader .circle.three {
-  border-top-color: #f1c40f;
-}
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  
+  > div {
+    height: 100%;
+    width: 8px;
+    display: inline-block;
+    float: left;
+    margin-left: 2px;
+    -webkit-animation: delay 0.8s infinite ease-in-out;
+    animation: delay 0.8s infinite ease-in-out;
   }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+  
+  .bar1{
+    background-color: #754fa0 ;
+  }
+  .bar2{
+    background-color: #09b7bf;
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+  }
+  .bar3{
+    background-color: #90d36b;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
+  .bar4{
+    background-color: #f2d40d;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+  .bar5{
+    background-color: #fcb12b;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+  }
+  .bar6{
+    background-color: #ed1b72;
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+  }
+}
+
+
+@-webkit-keyframes delay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.05) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes delay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
   }
 }
 
 .content {
-  display: none;
-  text-align: center;
-  padding: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .content.loaded {
-  display: block;
+  opacity: 1;
 }
 
-.content h2 {
-  font-family: 'Audiowide', serif;
-  color:aliceblue;
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-family: 'Audiowide', serif;
-    color: #ffffff;
-    text-align: center;
-  }
-}
-
-.content p {
-  font-family: 'Caudex', serif;
-}
 
 
 /* Event Section */
