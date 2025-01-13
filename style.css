@@ -16,7 +16,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
+  background:transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -129,8 +130,9 @@ nav ul li a:hover {
 .footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: .4;
+  /* background: rgba(0, 0, 0, 0.8); */
+  background: transparent;
+  /* opacity: .4; */
 
 }
 
@@ -243,13 +245,79 @@ p {
   color: #e94560;
 }
 
-.loader {
+/* .loader {
   position: relative;
   width: 100px;
   height: 100px;
+} */
+
+.loader {
+  margin: 0 auto;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  
+  > div {
+    height: 100%;
+    width: 8px;
+    display: inline-block;
+    float: left;
+    margin-left: 2px;
+    -webkit-animation: delay 0.8s infinite ease-in-out;
+    animation: delay 0.8s infinite ease-in-out;
+  }
+  
+  .bar1{
+    background-color: #754fa0 ;
+  }
+  .bar2{
+    background-color: #09b7bf;
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+  }
+  .bar3{
+    background-color: #90d36b;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
+  .bar4{
+    background-color: #f2d40d;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+  .bar5{
+    background-color: #fcb12b;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+  }
+  .bar6{
+    background-color: #ed1b72;
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+  }
 }
 
-.loader .circle {
+@-webkit-keyframes delay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.05) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes delay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+/* .loader .circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -258,9 +326,9 @@ p {
   border-radius: 50%;
   border: 5px solid transparent;
   animation: spin 1.5s linear infinite;
-}
+} */
 
-.loader .circle.one {
+/* .loader .circle.one {
   border-top-color: #3498db;
   animation-delay: -0.4s;
 }
@@ -272,16 +340,16 @@ p {
 
 .loader .circle.three {
   border-top-color: #f1c40f;
-}
+} */
 
-@keyframes spin {
+/* @keyframes spin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
-}
+} */
 
 .content {
   display: none;
