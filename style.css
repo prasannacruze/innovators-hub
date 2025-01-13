@@ -268,8 +268,8 @@ p {
     display: inline-block;
     float: left;
     margin-left: 2px;
-    -webkit-animation: delay 0.8s infinite ease-in-out;
-    animation: delay 0.8s infinite ease-in-out;
+    -webkit-animation: delay 1.5s infinite ease-in-out;
+    animation: delay 1.5s infinite ease-in-out;
   }
   
   .bar1{
@@ -495,7 +495,7 @@ p {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 75px 75px;
+  margin:auto;
 }
 
 .grid {
@@ -638,3 +638,52 @@ p {
     display: none;
   }
 } */
+
+
+#countdown {
+  text-align: center;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+}
+
+#timer div {
+  margin: 0 10px;
+}
+
+#timer span {
+  display: block;
+  font-size: 24px;
+}
+
+ @media (max-width:768px)
+{
+  #countdown {
+    text-align: center;
+  }
+  
+  #timer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #timer div {
+    margin: 0 8px;
+  }
+  
+  #timer span {
+    display: block;
+    font-size: 14px;
+  }
+}
+
+@media (max-width:768px)
+{
+
+.loader {
+  top: 75%;
+  left: 50%;
+}
+}
