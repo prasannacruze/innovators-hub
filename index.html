@@ -4,9 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events</title>
+  <link rel="icon" href="gceblogo.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!-- Header -->
+   <header>
+    <div class="logo">Phantasm'25</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#contact">Contact</a>
+      <a href="#login">Login</a>
+    </nav>
+
+    <!-- Hamburger icon for mobile -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <!-- Side menu -->
+  <div class="side-menu" id="sideMenu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </div>
+  <!-- bg -->
+  <div >
+    <video autoplay loop muted plays-inline class="background-clip">
+      <source src="bg.mp4" type="video/mp4" >
+    </video>
+  </div>
   <h3>TECHNICAL EVENTS</h3>
   <div class="scroll-container">
     <div class="card">Coding Contest</div>
@@ -26,5 +61,26 @@
     <div class="card">Dance</div>
     <div class="card">Drama</div>
   </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CSEA. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+  <script>
+    // Function to toggle the side menu visibility
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('open'); // Toggle the open class to show/hide menu
+    }
+
+    // Function to close the side menu
+    function closeMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.remove('open'); // Remove the open class to hide menu
+    }
+  </script>
 </body>
 </html>
