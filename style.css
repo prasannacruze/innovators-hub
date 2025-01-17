@@ -4,6 +4,8 @@ body {
   overflow-x: hidden;
   /* background: linear-gradient(to bottom, #f0f8ff, #e6f2ff); Light gradient background */
   color: #000;
+display:flex;
+flex-direction:column;
 }
 
 /* Header Styles */
@@ -68,7 +70,7 @@ h3 {
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
   background:transparent;
 }
@@ -137,94 +139,180 @@ object-fit: cover;
 z-index: -1;
 /* opacity: 0.7; */
 }
+
 /* header footer */
+/* Header should fit the full width and fixed height */
+        header {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; /* Make sure header spans full width */
+            height: 60px; /* Fixed height for the header */
+            padding: 0 20px; /* Ensure proper padding from left and right */
+            box-sizing: border-box; /* Include padding in the header height */
+            position: relative; /* Allow positioning of other elements inside */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+        }
 
-header .logo {
-font-size: 1.5em;
-font-weight: bold;
-}
+        /* Logo in the header */
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
 
-header nav {
-display: flex;
-gap: 20px;
-}
+        /* Navigation bar in the header */
+        header nav {
+            display: flex;
+            gap: 50px;
+        }
 
-header nav a {
-color: white;
-text-decoration: none;
-font-size: 1em;
-transition: color 0.3s ease;
-}
+        /* Style for links inside the navigation */
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
 
-header nav a:hover {
-color: #ffeb3b;
-}
+        /* Hover effect on links */
+        header nav a:hover {
+            color: #ffeb3b;
+        }
 
-/* Hamburger Icon */
-.hamburger {
-display: none;
-cursor: pointer;
-}
+        /* Side menu styles */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px; /* Initially off-screen */
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            color: #1a237e;
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+        }
 
-.hamburger div {
-width: 30px;
-height: 4px;
-background-color: white;
-margin: 6px 0;
-}
+        .side-menu a {
+            color: #1a237e;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+            padding: 15px 0;
+            transition: color 0.3s;
+        }
 
-/* Side Menu */
-.side-menu {
-position: fixed;
-top: 0;
-right: -250px;
-width: 250px;
-height: 100%;
-background-color: white;
-color: #1a237e;
-padding: 20px;
-transition: right 0.3s ease-in-out;
-z-index: 1000;
-box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
-}
+        .side-menu a:hover {
+            color: #ffeb3b;
+        }
 
-.side-menu.open {
-right: 0;
-}
+        /* Close button inside the side menu */
+        .side-menu .close-btn {
+            font-size: 2em;
+            color: #1a237e;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
 
-.side-menu a {
-color: #1a237e;
-text-decoration: none;
-font-size: 1.2em;
-display: block;
-padding: 15px 0;
-}
+        .side-menu .close-btn:hover {
+            color: #ffeb3b;
+        }
 
-.side-menu .close-btn {
-font-size: 2em;
-color: #1a237e;
-position: absolute;
-top: 10px;
-left: 15px;
-cursor: pointer;
-}
+        /* Footer styling */
+        footer {
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-/* Footer */
-footer {
-background-color:transparent;
-color: white;
-text-align: center;
-padding: 15px 10px;
-position: f;
-bottom: 0;
-width: 100%;
-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
 
-footer .social-icons a {
-color: white; 
-margin: 0 10px;
-text-decoration: none;
-font-size: 1.2em;
-}
+        footer a {
+            color:white;
+            text-decoration: none;
+        }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger icon styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                height: 60px; /* Ensure header stays at 60px height */
+            }
+
+            header nav {
+                display: none; /* Hide the regular navbar on mobile */
+            }
+
+            /* Show hamburger icon */
+            .hamburger {
+                display: block;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+
+            footer .social-icons {
+                margin-top: 10px;
+            }
+
+            /* Initially hide the side menu */
+            .side-menu {
+                right: -500px; /* Side menu is off-screen */
+            }
+
+            /* Show the side menu when it's toggled */
+            .side-menu.open {
+                right: -50px; /* Slide the side menu in */
+            }
+
+            .side-menu a {
+                padding: 15px;
+            }
+        }
+
+        /* Desktop version - regular navigation bar */
+        @media (min-width: 769px) {
+            .side-menu {
+                display: none; /* Hide the side menu on desktop */
+            }
+
+            header nav {
+                display: flex; /* Keep the navigation bar on desktop */
+            }
+        }
+.p_tag{ padding-top:20px;}
